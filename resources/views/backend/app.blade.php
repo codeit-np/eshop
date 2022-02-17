@@ -19,6 +19,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.css">
 
+  <style>
+    .ck-editor__editable_inline {
+        min-height: 200px;
+    }
+    </style>
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -306,6 +311,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
     $(document).ready( function () {
     $('#datatable').DataTable();
 } );
+</script>
+
+<script src="https://cdn.ckeditor.com/ckeditor5/32.0.0/classic/ckeditor.js"></script>
+<script>
+    ClassicEditor
+            .create( document.querySelector( '#description' ) )
+            .then( editor => {
+                    console.log( editor );
+            } )
+            .catch( error => {
+                    console.error( error );
+            } );
 </script>
 </body>
 </html>
